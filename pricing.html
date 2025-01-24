@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pricing.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator-form-container">
+        <h1>Price Calculator</h1>
+        <form id="calculatorForm">
+            <!-- Dropdown Section -->
+            <label for="material">Select Material:</label>
+            <select id="material" required>
+                <option value="">Select a Material</option>
+                <option value="plastic">Plastic</option>
+                <option value="fiber">Fiber</option>
+                <option value="steel">Steel</option>
+                <option value="iron">Iron</option>
+                <option value="papers">Papers</option>
+                <option value="copper">Copper</option>
+                <option value="metals">Metals</option>
+            </select>
+    
+            <!-- Weight Input Section -->
+            <label for="weight">Enter Weight (Kg):</label>
+            <input type="number" id="weight" min="1" required>
+    
+            <!-- Calculate Price Button -->
+            <button type="button" id="calculateBtn">Calculate Price</button>
+            
+            <!-- Result Section -->
+            <div id="result">
+                <p>Total Price: <span id="priceResult">₹0</span></p>
+            </div>
+        </form>
+    </div>
+    <script src="pricing.js"></script>
+</body>
+</html>

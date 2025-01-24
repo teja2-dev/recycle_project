@@ -1,0 +1,328 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Header Section *
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #28a745;
+    color: white;
+}
+
+/*New Image slider sc*/
+
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    height: 70vh;
+    overflow: hidden;
+  }
+  
+  /* Slide Styling */
+  .slide {
+    display: none;
+    width: 100%;
+    height: 70vh;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Centering Content */
+  .slider-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+  
+  .slider-content h2{
+    font-size: 3.5rem;
+    padding: 5px;
+  }
+  
+  .slider-content p{
+    font-size: 1.59rem;
+    padding: 5px;
+  }
+  
+  /* Button Styling */
+  .slider-button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .slider-button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Navigation Arrows */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 16px;
+    font-size: 24px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    z-index: 1000;
+  }
+  
+  .prev { left: 10px; }
+  .next { right: 10px; }
+  
+  .prev:hover, .next:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  
+  /*Slide animation*/
+  /* Sliding Animation Effect */
+  .active {
+    display: block;
+    animation: slideEffect 0s ease;
+  }
+  
+  @keyframes slideEffect {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+  }
+  
+  /*Waste management service section starts*/
+  /* Section Styling */
+.service-section {
+    padding: 0;
+}
+
+.service-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Service Container */
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+/* Service Box Styling */
+.service-box {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box img {
+  width: 80px;
+}
+
+.service-box h3 {
+    color: black;
+    font-size: 20px;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/*New feature style*/
+.service-box-link {
+  display: block;
+  text-decoration: none; /* Removes default underline */
+  color: inherit; /* Inherits the text color */
+}
+
+.service-box {
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+
+/* Service Icon Styling */
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #28a745;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box {
+        max-width: 90%;
+    }
+}
+/*waste management section ends*/
+
+/*Service section starts*/
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+    padding: 0 8rem;
+}
+
+.faq-section h2{
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    background: #2892a7;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.faq-answer {
+    display: none;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .service-cards .card-container,
+    .pricing-table {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/*Ends*/
+/*New elements starts*/
+.service-list {
+    text-align: center;
+    padding: 0;
+}
+
+.service-list h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.service-item h3 {
+    color: black;
+}
+
+.service-item {
+    display: inline-block;
+    text-align: center;
+    padding: 2rem;
+    max-width: 300px;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service-item img {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+/*Hero section updated*/
+  /*Hero section starts*/
+  .hero1 {
+    text-align: center;
+    padding: 25px;
+    background: url(Waste_management_resources/wallpaper/Wallpaper_services.png) no-repeat center/cover;
+    height: 375px;
+  }
+
+  .hero1-content {
+    max-width: 900px;
+    text-align: center;
+    padding: 10%;
+    border-radius: 10px;
+    z-index: 2;
+  }
+
+  /*Heading style*/
+  .hero1-content h1{
+    font-size: 3rem;
+    margin-left: 33.33%;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  /*Paragraph styling*/
+  .hero1-content p{
+    font-size: 1.2rem;
+    margin-left: 33.33%;
+    margin-bottom: 20px;
+  }
+
+  /*Button styling*/
+  .Get-started {
+    padding: 10px 20px;
+    margin-left: 33.33%;
+    background-color: #43281c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin-top: 160px;
+  }
+
+  .Get-started:hover {
+    color: #e0f7fa;
+    background-color: #36201683;
+  }
+  /*Hero updated section ends*/

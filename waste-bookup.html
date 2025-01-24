@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Slots Form</title>
+    <link rel="stylesheet" href="waste-bookup.css">
+    <link rel="stylesheet" href="waste-homepage.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="logo">
+            <img src="Waste_management_resources/Logo_header/recycle-bin.png" alt="Logo">
+        </div>
+          <ul class="nav-links">
+            <li><a href="waste-homepage.html">Home</a></li>
+            <li><a href="waste-service.html">Services</a></li>
+            <li><a href="waste-book.html">Donate a Book</a></li>
+            <li><a href="waste-pricing.html">Pricing</a></li>
+            <li><a href="waste-contact.html">Contact Us</a></li>
+          </ul>
+          <a class="cta-button" href="waste-bookup.html">Book a Pickup</a>
+        </nav>
+      </header>
+      <div class="form-container">
+        <h1>Book Your Slot</h1>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">E-mail ID:</label>
+            <input type="email" id="email" required>
+            
+            <label for="city">City:</label>
+            <input type="text" id="city" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" required>
+            
+            <label for="materialToggle">Select Materials:</label>
+            <div id="materialToggle" class="dropdown-toggle">▼</div>
+
+            <div id="materialDropdown" class="dropdown-options">
+                <div class="material-option" data-value="plastic">Plastic</div>
+                <div class="material-option" data-value="fiber">Fiber</div>
+                <div class="material-option" data-value="steel">Steel</div>
+                <div class="material-option" data-value="iron">Iron</div>
+                <div class="material-option" data-value="papers">Papers</div>
+                <div class="material-option" data-value="copper">Copper</div>
+                <div class="material-option" data-value="metals">Any Metals</div>
+                <div class="material-option" data-value="Cloths">Cloths</div>
+                <div class="material-option" data-value="electronic">Electronics</div>
+            </div>
+
+            <!-- Error message -->
+            <p id="materialError" style="color: red; display: none;">Please select at least one material.</p>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+    
+            <label for="slot">Select Slot:</label>
+            <select id="slot" required>
+                <option value="">Select a Slot</option>
+            </select>
+    
+            <button type="submit">Book Now</button>
+        </form>
+        
+        <!-- Thank You Message -->
+        <div class="thank-you-message" id="thankYouMessage">
+            <div class="tick-mark">✔</div>
+            <p>Thank You! Your slot has been successfully booked.</p>
+        </div>
+    </div>
+        
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- New Social Media Section (Moved to First Position) -->
+            <div class="footer-column">
+                <h3>Sustainable Future</h3>
+                <div class="web-quote">
+                    <p>Proper waste management<br> ensures a cleaner, greener,<br> healthier future for all.</p>
+                </div>
+            </div>      
+              <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                  <a href="https://facebook.com" target="_blank"><img src="Waste_management_resources/footer_icons/facebook.png" alt="Facebook"></a>
+                  <a href="https://twitter.com" target="_blank"><img src="Waste_management_resources/footer_icons/twitter.png" alt="Twitter"></a>
+                  <a href="https://instagram.com" target="_blank"><img src="Waste_management_resources/footer_icons/instagram.png" alt="Instagram"></a>
+                  <a href="https://linkedin.com" target="_blank"><img src="Waste_management_resources/footer_icons/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Waste Management. All Rights Reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+    <script src="waste-bookup.js"></script>
+    <script src="waste-homepage.js"></script>
+</body>
+</html>
+
+<!--Mysql html-->
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Slots Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Book Your Slot</h2>
+        <form id="bookingForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="email" id="email" placeholder="E-mail ID" required>
+            <input type="text" id="city" placeholder="City" required>
+            <input type="date" id="date" required>
+            <select id="time" required>
+                <option value="AM">A.M</option>
+                <option value="PM">P.M</option>
+            </select>
+            <label>Select Slot (30 mins each):</label>
+            <select id="slot" required></select>
+            <button type="submit">Book Now</button>
+        </form>
+        <div id="successMessage" class="hidden">
+            <h3>✅ Thank You for Booking!</h3>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+-->
+
+<!--MySql CSS-->
+<!--body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f3f4f6;
+    margin: 0;
+}
+
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #218838;
+}
+
+.hidden {
+    display: none;
+}
+
+#successMessage {
+    text-align: center;
+    padding: 20px;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 10px;
+}
+-->
+
+<!--MySql JS-->
+<!--// Firebase configuration
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+// Generate slots dynamically
+const slotSelect = document.getElementById('slot');
+const totalSlots = 10;
+const slotDuration = 30; // 30 minutes
+
+function generateSlots() {
+    slotSelect.innerHTML = '';
+    for (let i = 1; i <= totalSlots; i++) {
+        const option = document.createElement('option');
+        option.value = `Slot ${i}`;
+        option.textContent = `Slot ${i} - ${slotDuration * i} mins`;
+        slotSelect.appendChild(option);
+    }
+}
+
+generateSlots();
+
+// Form submission and booking logic
+document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const city = document.getElementById('city').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const slot = document.getElementById('slot').value;
+
+    // Check slot availability
+    db.ref('bookings/' + date + '/' + slot).once('value').then((snapshot) => {
+        if (snapshot.exists()) {
+            alert('This slot is already booked. Please choose another.');
+        } else {
+            db.ref('bookings/' + date + '/' + slot).set({
+                name, phone, email, city, date, time, slot
+            });
+
+            document.getElementById('bookingForm').reset();
+            document.getElementById('bookingForm').style.display = 'none';
+            document.getElementById('successMessage').classList.remove('hidden');
+        }
+    });
+});
+-->
+
+<!--Firebase HTML-->
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Slots Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="bookingForm">
+            <h2>Book Your Slot</h2>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+
+            <label for="email">E-mail ID</label>
+            <input type="email" id="email" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time</label>
+            <input type="time" id="time" required>
+
+            <label for="slots">Select Slot</label>
+            <select id="slots" required>
+                -- Slots will be dynamically added here using JS --
+            </select>
+
+            <button type="submit">Book Now</button>
+        </form>
+        <div id="thankYouMessage" class="hidden">
+            <h2>Thank You!</h2>
+            <p>Your slot has been successfully booked.</p>
+            <span class="checkmark">✔️</span>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+-->
+
+<!--Firebase HTML-->
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Slots Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="bookingForm">
+            <h2>Book Your Slot</h2>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+
+            <label for="email">E-mail ID</label>
+            <input type="email" id="email" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time</label>
+            <input type="time" id="time" required>
+
+            <label for="slots">Select Slot</label>
+            <select id="slots" required>
+                -- Slots will be dynamically added here using JS --
+            </select>
+
+            <button type="submit">Book Now</button>
+        </form>
+        <div id="thankYouMessage" class="hidden">
+            <h2>Thank You!</h2>
+            <p>Your slot has been successfully booked.</p>
+            <span class="checkmark">✔️</span>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+-->
+
+<!--Firebase CSS-->
+<!--body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3f3f3;
+}
+
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+.hidden {
+    display: none;
+}
+
+#thankYouMessage {
+    text-align: center;
+    color: green;
+}
+
+.checkmark {
+    font-size: 3rem;
+    color: green;
+}
+-->
+
+<!--Firebase JS-->
+<!--// Firebase Configuration
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+const bookingForm = document.getElementById('bookingForm');
+const thankYouMessage = document.getElementById('thankYouMessage');
+const slotsDropdown = document.getElementById('slots');
+
+// Generate available slots (10 slots with 30-minute intervals)
+const generateSlots = () => {
+    slotsDropdown.innerHTML = ""; 
+    for (let i = 1; i <= 10; i++) {
+        const option = document.createElement('option');
+        option.value = `Slot ${i}`;
+        option.textContent = `Slot ${i} (30 mins)`;
+        slotsDropdown.appendChild(option);
+    }
+};
+
+// Check if the slot is available
+const checkSlotAvailability = async (date, slot) => {
+    const snapshot = await database.ref(`bookings/${date}/${slot}`).once('value');
+    return !snapshot.exists(); // Returns true if slot is available
+};
+
+// Submit Form
+bookingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const city = document.getElementById('city').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const slot = document.getElementById('slots').value;
+
+    const isAvailable = await checkSlotAvailability(date, slot);
+
+    if (isAvailable) {
+        // Save to Firebase
+        database.ref(`bookings/${date}/${slot}`).set({
+            name, phone, email, city, date, time, slot
+        });
+
+        // Hide form and show message
+        bookingForm.classList.add('hidden');
+        thankYouMessage.classList.remove('hidden');
+    } else {
+        alert("Sorry, this slot is already booked. Please choose another.");
+    }
+});
+
+// Initialize slots on page load
+generateSlots();
+-->
+
+<!--Firebase or MySql Html-->
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Slots Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Book Your Slot</h2>
+        <form id="bookingForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="email" id="email" placeholder="E-mail ID" required>
+            <input type="text" id="city" placeholder="City" required>
+            <input type="date" id="date" required>
+            <select id="time" required>
+                <option value="AM">A.M</option>
+                <option value="PM">P.M</option>
+            </select>
+            <label>Select Slot (30 mins each):</label>
+            <select id="slot" required></select>
+            <button type="submit">Book Now</button>
+        </form>
+        <div id="successMessage" class="hidden">
+            <h3>✅ Thank You for Booking!</h3>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+-->
+
+<!--Firebase or MySql-->
+<!--body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f3f4f6;
+    margin: 0;
+}
+
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #218838;
+}
+
+.hidden {
+    display: none;
+}
+
+#successMessage {
+    text-align: center;
+    padding: 20px;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 10px;
+}
+-->
+
+<!--Firebase or MySql-->
+<!--// Firebase configuration
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+// Generate slots dynamically
+const slotSelect = document.getElementById('slot');
+const totalSlots = 10;
+const slotDuration = 30; // 30 minutes
+
+function generateSlots() {
+    slotSelect.innerHTML = '';
+    for (let i = 1; i <= totalSlots; i++) {
+        const option = document.createElement('option');
+        option.value = `Slot ${i}`;
+        option.textContent = `Slot ${i} - ${slotDuration * i} mins`;
+        slotSelect.appendChild(option);
+    }
+}
+
+generateSlots();
+
+// Form submission and booking logic
+document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const city = document.getElementById('city').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const slot = document.getElementById('slot').value;
+
+    // Check slot availability
+    db.ref('bookings/' + date + '/' + slot).once('value').then((snapshot) => {
+        if (snapshot.exists()) {
+            alert('This slot is already booked. Please choose another.');
+        } else {
+            db.ref('bookings/' + date + '/' + slot).set({
+                name, phone, email, city, date, time, slot
+            });
+
+            document.getElementById('bookingForm').reset();
+            document.getElementById('bookingForm').style.display = 'none';
+            document.getElementById('successMessage').classList.remove('hidden');
+        }
+    });
+});
+-->
